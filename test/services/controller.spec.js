@@ -15,9 +15,9 @@ describe('create controller', function () {
 
   beforeEach(Angular.mock.inject(function ($injector) {
     $controller = $injector.get('$controller');
-    $q = $injector.get('$q');
-    $scope = $injector.get('$rootScope').$new();
-    Postcard = $injector.get('Postcard');
+    $q          = $injector.get('$q');
+    $scope      = $injector.get('$rootScope').$new();
+    Postcard    = $injector.get('Postcard');
   }));
 
   describe('create', function () {
@@ -31,7 +31,7 @@ describe('create controller', function () {
     })
 
     it('exposes the newly created postcard', function () {
-      var payload = { front: 'front', back: 'back' };
+      var payload  = { front: 'front', back: 'back' };
       var postcard = { id: 'psc_id' };
 
       Sinon.stub(Postcard, 'create').returns($q.resolve(postcard));
